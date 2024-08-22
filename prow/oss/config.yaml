@@ -29,6 +29,7 @@ tide:
     GoogleCloudPlatform/compute-image-import: squash
     GoogleContainerTools/kpt-config-sync: squash
     kubeflow: squash
+    VaniHaripriya/data-science-pipelines: squash
     GoogleCloudPlatform/k8s-config-connector: merge
     GoogleCloudPlatform/gke-networking-api: merge
   squash_label: tide/merge-method-squash
@@ -59,6 +60,7 @@ tide:
     - GoogleCloudPlatform/gke-networking-api
     - GoogleContainerTools/kpt-config-sync
     - GoogleCloudPlatform/k8s-config-connector
+    - VaniHaripriya/data-science-pipelines
     labels:
     - lgtm
     - approved
@@ -198,15 +200,17 @@ prowjob_default_entries:
 
 branch-protection:
   orgs:
-    kubeflow:
-      protect: true
-      #required_status_checks:
-      #  contexts:
-      #  - cla/google
-      exclude:
-      - "^revert-" # don't protect revert branches
-      - "^dependabot/" # don't protect branches created by dependabot
-      - "-patch-" # don't protect branches created by editing on GitHub UI
+    VaniHaripriya:
+      repos:
+        data-science-pipelines:
+          protect: true
+          required_status_checks:
+            contexts:       
+            - KFP Manifests
+          exclude:
+          - "^revert-" # don't protect revert branches
+          - "^dependabot/" # don't protect branches created by dependabot
+          - "-patch-" # don't protect branches created by editing on GitHub UI
 
 deck:
   google_analytics: G-NQ9CERRMYD
