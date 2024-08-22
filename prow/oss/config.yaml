@@ -92,7 +92,7 @@ tide:
     - do-not-merge/invalid-owners-file
     - do-not-merge/work-in-progress
   - orgs:
-    - kubeflow
+    - data-science-pipelines
     labels:
     - lgtm
     - approved
