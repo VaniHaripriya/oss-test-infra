@@ -94,6 +94,7 @@ tide:
     labels:
     - lgtm
     - approved
+    - ci-passed
     missingLabels:
     - do-not-merge
     - do-not-merge/hold
